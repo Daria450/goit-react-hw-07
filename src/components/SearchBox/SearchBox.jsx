@@ -6,7 +6,7 @@ import { changeFilter } from '../../redux/filtersSlice';
 const SearchBox = () => {
     const dispatch = useDispatch();
 
-    const filter = useSelector((state) => state.filter.filter.name);
+    const filter = useSelector((state) => state.filter.name);
 
     const handleChangeQuery = query => {
         dispatch(changeFilter(query))

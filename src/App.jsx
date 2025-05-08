@@ -1,23 +1,21 @@
 
+import { useDispatch } from 'react-redux'
 import './App.css'
 import ContactForm from './components/ContactForm/ContactForm'
 import ContactList from './components/ContactList/ContactList'
 import SearchBox from './components/SearchBox/SearchBox'
+import { useEffect } from 'react'
+import { fetchContacts } from './redux/contactsOps'
 
 
 
 function App() {
 
-  // const [contactItems, setContactItems] = useState(() => {
-  //   const savedContacts = localStorage.getItem("contacts");
-  //   return savedContacts ? JSON.parse(savedContacts) : contacts;
-  // }
+  const dispatch = useDispatch();
 
-  // );
-
-
-
-
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch])
 
   return (
     <>
