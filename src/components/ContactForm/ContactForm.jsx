@@ -2,7 +2,6 @@ import React from 'react'
 import { Formik, Form, Field } from 'formik';
 import { useId } from 'react';
 import s from './ContactForm.module.css';
-import { nanoid } from 'nanoid';
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { useDispatch } from 'react-redux';
@@ -33,7 +32,6 @@ const ContactForm = () => {
         actions.resetForm();
         const newContact = {
             ...values,
-            id: nanoid(),
         };
         dispatch(addContact(newContact))
     };
